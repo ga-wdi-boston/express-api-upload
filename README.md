@@ -5,6 +5,7 @@
 ## Instructions
 
 Fork and clone this repository, then
+
 ```bash
 $ cd js-express-multer
 $ subl .
