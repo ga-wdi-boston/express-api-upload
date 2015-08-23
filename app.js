@@ -13,9 +13,11 @@ var multer = require('multer');
 var storage = multer.memoryStorage();
 var upload = multer({ storage: storage });
 
+var Image = require('./models/image.js');
 
 var app = express();
 
+//For file upload
 var uploadBaseUrl = function (req) {
   return util.format('%s://%s:%s/images',
     req.protocol,
@@ -30,18 +32,17 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/images', function(req, res, next) {
-  Image.find({}, {_id: 0}, function(err, images) {
-      res.json(images);
-  });aa
+  Image.find({}, {__v: 0}, function(err, images) {
+    if (err) {
+      next(err);
+      return;
+    }
+    res.json(images);
+  });
 });
 
-var saveImage = function(req, callback) {
-  callback(null, {url: req.protocol + '://' + req.hostname + app.get ('port') + '/images/foo'});
-};
-
-app.post('/images', upload.single('file'), function(req, res) {
-  //res.json({body: req.body, file: req.file.buffer });
-  res.json({url: uploadBaseUrl(req) + '/foo'});
+app.post('/images', upload.single('file'), function(req, res, next) {
+  res.json({body: req.body, file: req.file.buffer});
 });
 
 // catch 404 and forward to error handler
@@ -50,6 +51,7 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
+
 
 // error handlers
 

@@ -1,19 +1,16 @@
 'use strict';
 
 var fs = require('fs');
+var Image = require('./models/image.js');
+
+var buffer = fs.readFileSync(process.argv[2]);
 
 var awsUpload = require('./lib/aws-upload.js');
 
-var logResult = function(err, data) {
+awsUpload(buffer, process.argv[3], function(err, data) {
   if (err) {
-    console.error(err);
-  } else {
-    console.log(data);
+    throw err;
   }
-};
-
-for (var i = 2; i < process.argv.length; i++) {
-  var buffer = fs.readFileSync(process.argv[i]);
-  awsUpload(buffer, logResult);
-}
-
+  Image.db.close();
+  console.log(data);
+});

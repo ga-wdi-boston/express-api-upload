@@ -1,22 +1,25 @@
 'use strict';
-$(function(){
+$(function() {
+  $('#upload-form').on('submit', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    return false;
+  });
   $('#upload').on('click', function (e) {
     var formData = new FormData($('#upload-form')[0]);
     $.ajax({
-//      url: 'http://httpbin.org/post',
-      url: 'http://localhost:3000/images',
+      url: 'http://httpbin.org/post',
+//      url: 'http://localhost:3000/images',
       type: 'POST',
-      data: formData,
-      //next two required for `enctype="multipart/form-data"`
       contentType: false,
       processData: false,
-      success: function (data) {
-        $('#result').html(JSON.stringify(data, null, 2));
-      },
-      error: function(jqxhr){
-        console.error(jqxhr);
-      }
+      data: formData
+    })
+    .done(function(data) {
+      $('#result').html(JSON.stringify(data, null, 2));
+    })
+    .fail(function(jqxhr) {
+      console.error(jqxhr);
     });
-    return false;
   });
 });
