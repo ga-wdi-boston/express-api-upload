@@ -4,13 +4,8 @@
 
 ## Instructions
 
-Fork and clone this repository, then
+Fork, clone, and npm install.  Then `npm install -g nodemon`.
 
-```bash
-$ cd js-express-multer
-$ subl .
-$ npm install
-```
 ## Objectives
 
 By the end of this lesson, students should be able to:
@@ -24,7 +19,7 @@ By the end of this lesson, students should be able to:
 ## Prerequisites
 
 - An `AWS` _(Amazon Web Services)_ account
-- [Introduction to ExpressJS](https://github.com/ga-wdi-boston/express-intro08)
+- [Familiarity with express middleware](https://github.com/ga-wdi-boston/express-standard-middleware)
 
 ## Discussion
 
@@ -67,11 +62,11 @@ On the AWS Policy Generator page, select `S3 Bucket Policy` as the type of polic
 
 With this configuration, we only allow upload access to this the one bucket.
 
-This is one specific way of implementing access control.  AWS provides many different mechanisms to grant and restrict access.
+This is one specific and restrictive way of implementing access control.  AWS provides many different mechanisms to grant and restrict access.
 
 ### Uploading files to AWS from node - code along
 
-We'll build a command line script to upload file to AWS.
+We'll build a command line script to upload a file to AWS.
 
 Why build a command line uploader?
 
@@ -84,21 +79,29 @@ We'll use the following node modules.
 - `fs`
 - `mongoose`
 
-### refactoring - lab
+We'll run the script using `npm run upload-aws <file> [comment]`.
+
+### refactoring - practice
+
+We'll separate out the parts that aren't about a command line script so we can reuse them.
 
 ## Uploading files to the file-system - code along
 
-We'll build a command line script to "upload" file to the file-system.
+We'll build a command line script to "upload" a file to the file-system.
 
 Why build a command line uploader?  What do we have to take care of that AWS handles for us?
 
 We'll use the same node modules but omit `aws-sdk`.
 
-### refactoring - lab
+### refactoring - practice
+
+We'll separate out the parts that aren't about a command line script so we can reuse them.
 
 ## Uploading files to an echo server from an html form - code along
 
-Using a form with attribute `enctype="multipart/form-data"` to allow uploading of one or files.
+Fork and clone `https://github.com/ga-wdi-boston/jquery-ajax-form-data-upload`.
+
+We'll use a form with attribute `enctype="multipart/form-data"` to allow uploading of one or more files.
 
 We'll use the `FormData` object with jQuery's `$.ajax` function to POST data to an echo server, `http://httpbin.org`.  Later we'll use this front end to POST data to express/multer.
 
@@ -115,6 +118,6 @@ We'll use the following express modules in addition to the modules from the file
 - `multer`
 
 
-## Uploading files to AWS via multer and express - lab
+## Uploading files to AWS via multer and express - practice
 
 We'll need to add `aws-sdk` to the modules we're using.
