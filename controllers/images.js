@@ -11,7 +11,7 @@ var index = function index(req, res, next) {
 };
 
 var create = function create(req, res, next) {
-  res.json({body: req.body, file: req.file.buffer});
+  res.json({body: req.body, file: req.file});
 };
 
 module.exports = {

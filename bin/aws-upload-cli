@@ -16,5 +16,5 @@ awsUpload(buffer, caption).then(function(data) {
 }).catch(function(error) {
   console.error(error);
 }).then(function() {
-  mongoose.connection.close();
+  db.close();
 });
