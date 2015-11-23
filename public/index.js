@@ -2,14 +2,10 @@
 $(function() {
   $('#upload-form').on('submit', function(e) {
     e.preventDefault();
-    e.stopPropagation();
-    return false;
-  });
-  $('#upload').on('click', function (e) {
-    var formData = new FormData($('#upload-form')[0]);
+    var formData = new FormData(e.target);
     $.ajax({
-      url: 'http://httpbin.org/post',
-//      url: 'http://localhost:3000/images',
+//      url: 'http://httpbin.org/post',
+      url: 'http://localhost:3000/images',
       type: 'POST',
       contentType: false,
       processData: false,

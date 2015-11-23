@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "upload-aws": "node ./bin/aws-upload-cli",
+    "upload-server": "node ./bin/file-upload-cli"
   },
   "dependencies": {
     "aws-sdk": "^2.1.45",
