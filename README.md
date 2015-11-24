@@ -10,11 +10,11 @@ Fork, clone, and npm install.  Then `npm install -g nodemon`.
 
 By the end of this lesson, students should be able to:
 
-- Upload files to AWS from a node application
+- Upload files to AWS S3 from a node application
 - Write files from a `Buffer` to the file-system.
 - Create path names with a low chance of duplication
 - Store information about uploaded files in MongoDB via Mongoose
-- Upload files from a browser to express and store them in the file-system or AWS.
+- Upload files from a browser to express and store them in the file-system or AWS S3.
 
 ## Prerequisites
 
@@ -67,6 +67,8 @@ This is one specific and restrictive way of implementing access control.  AWS pr
 ### Uploading files to AWS from node - code along
 
 We'll build a command line script to upload a file to AWS.
+
+We'll use [AWS.S3](http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html), specifically the [upload](http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#upload-property) method, to send files to AWS S3.
 
 Why build a command line uploader?
 
