@@ -2,24 +2,36 @@
 
 # File upload with node, express, and AWS
 
-## Instructions
+## Preparation
 
-Fork, clone, and npm install.  Then `npm install -g nodemon`.
+1.  [Fork and clone](https://github.com/ga-wdi-boston/meta/wiki/ForkAndClone)
+    this repository.
+1.  Create a new branch, `training`, for your work.
+1.  Install dependencies with `npm install`.
+1.  A version of `express-api-template` is in this repo. You'll need to follow
+steps #6-9 of the [installation section](https://github.com/ga-wdi-boston/express-api-template#installation)
+
+## Introduction
+
+This repo is part of the `browser-upload` sequence. If you came here first,
+you likely want to go check out [browser-upload repo](https://github.com/ga-wdi-boston/browser-upload), and come back when
+prompted. The client that we'll eventually use with this api is
+[upload-client](https://github.com/ga-wdi-boston/upload-client).
 
 ## Objectives
 
-By the end of this lesson, students should be able to:
+By the end of this lesson, developers should be able to:
 
-- Upload files to AWS S3 from a node application
-- Write files from a `Buffer` to the file-system.
-- Create path names with a low chance of duplication
-- Store information about uploaded files in MongoDB via Mongoose
-- Upload files from a browser to express and store them in the file-system or AWS S3.
+-   Upload files to AWS S3 from a node application
+-   Write files from a `Buffer` to the file-system.
+-   Create path names with a low chance of duplication
+-   Store information about uploaded files in MongoDB via Mongoose
+-   Upload files from a browser to express and store them in the file-system or AWS S3.
 
 ## Prerequisites
 
-- An `AWS` _(Amazon Web Services)_ account
-- [Familiarity with express middleware](https://github.com/ga-wdi-boston/express-standard-middleware)
+-   An `AWS` _(Amazon Web Services)_ account
+-   [Familiarity with express middleware](https://github.com/ga-wdi-boston/express-standard-middleware)
 
 ## Discussion
 
@@ -74,16 +86,16 @@ Why build a command line uploader?
 
 We'll use the following node modules.
 
-- `aws-sdk`
-- `crypto`
-- `dotenv`
-- `file-type`
-- `fs`
-- `mongoose`
+-   `aws-sdk`
+-   `crypto`
+-   `dotenv`
+-   `file-type`
+-   `fs`
+-   `mongoose`
 
 We'll run the script using `npm run upload-aws <file> [comment]`.
 
-### refactoring - practice
+### Practice: Refactoring
 
 We'll separate out the parts that aren't about a command line script so we can reuse them.
 
@@ -95,7 +107,7 @@ Why build a command line uploader?  What do we have to take care of that AWS han
 
 We'll use the same node modules but omit `aws-sdk`.
 
-### refactoring - practice
+### Practice: Refactoring
 
 We'll separate out the parts that aren't about a command line script so we can reuse them.
 
