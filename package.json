@@ -7,7 +7,6 @@
   },
   "engines": {
     "node": "4.6.2",
-    "start": "node ./bin/www",
     "upload-aws": "node ./bin/aws-upload-cli",
     "upload-server": "node ./bin/file-upload-cli"
   },
