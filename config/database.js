@@ -1,6 +1,6 @@
 'use strict';
 
-const mongooseBaseName = 'express-api-template';
+const mongooseBaseName = 'express-api-upload';
 
 const environment = process.env.NODE_ENV || 'development';
 const database = {

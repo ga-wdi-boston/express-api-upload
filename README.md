@@ -8,9 +8,8 @@
     this repository.
 1.  Create a new branch, `training`, for your work.
 1.  Install dependencies with `npm install`.
-1.  [Install](https://github.com/ga-wdi-boston/express-api-template#installation)
-    `express-api-upload` into your training directory.  In step 2 rename
-    `express-api-template` to `express-api-upload`.
+1.  A version of `express-api-template` is in this repo. You'll need to follow
+steps #6-9 of the [installation section](https://github.com/ga-wdi-boston/express-api-template#installation)
 
 ## Introduction
 
